@@ -1,0 +1,78 @@
+<CONSOLIDATED-LIST>
+    <INDIVIDUALS>
+        <INDIVIDUAL type="array">
+        <INDIVIDUAL>
+            <REFERENCE-NUMBER>123</REFERENCE-NUMBER>
+            <GENDER>Male</GENDER>
+            <COMMENTS1>Additional info</COMMENTS1>
+            <INDIVIDUAL-ADDRESS>
+            <CITY>New York</CITY>
+            <STATE-PROVINCE>New York</STATE-PROVINCE>
+            <STREET>123 Main St</STREET>
+            </INDIVIDUAL-ADDRESS>
+            <INDIVIDUAL-ALIAS>
+            <ALIAS-NAME>John Doe</ALIAS-NAME>
+            </INDIVIDUAL-ALIAS>
+            <NATIONALITY>
+            <VALUE>US</VALUE>
+            </NATIONALITY>
+            <INDIVIDUAL-PLACE-OF-BIRTH>
+            <CITY>New York</CITY>
+            <STATE-PROVINCE>New York</STATE-PROVINCE>
+            <COUNTRY>US</COUNTRY>
+            </INDIVIDUAL-PLACE-OF-BIRTH>
+            <INDIVIDUAL-DATE-OF-BIRTH>
+            <YEAR>1980</YEAR>
+            </INDIVIDUAL-DATE-OF-BIRTH>
+        </INDIVIDUAL>
+        <INDIVIDUAL>
+            <REFERENCE-NUMBER>456</REFERENCE-NUMBER>
+            <GENDER>Female</GENDER>
+            <COMMENTS1>Additional info</COMMENTS1>
+            <INDIVIDUAL-ADDRESS type="array">
+            <INDIVIDUAL-ADDRESS>
+                <CITY>Los Angeles</CITY>
+                <STATE-PROVINCE>California</STATE-PROVINCE>
+                <STREET>456 Elm St</STREET>
+            </INDIVIDUAL-ADDRESS>
+            <INDIVIDUAL-ADDRESS>
+                <CITY>San Francisco</CITY>
+                <STATE-PROVINCE>California</STATE-PROVINCE>
+                <STREET>789 Oak St</STREET>
+            </INDIVIDUAL-ADDRESS>
+            </INDIVIDUAL-ADDRESS>
+            <INDIVIDUAL-ALIAS type="array">
+            <INDIVIDUAL-ALIAS>
+                <ALIAS-NAME>Jane Smith</ALIAS-NAME>
+            </INDIVIDUAL-ALIAS>
+            <INDIVIDUAL-ALIAS>
+                <ALIAS-NAME>Jane Doe</ALIAS-NAME>
+            </INDIVIDUAL-ALIAS>
+            </INDIVIDUAL-ALIAS>
+            <NATIONALITY>
+            <VALUE>UK</VALUE>
+            </NATIONALITY>
+            <INDIVIDUAL-PLACE-OF-BIRTH type="array">
+            <INDIVIDUAL-PLACE-OF-BIRTH>
+                <CITY>Los Angeles</CITY>
+                <STATE-PROVINCE>California</STATE-PROVINCE>
+                <COUNTRY>US</COUNTRY>
+            </INDIVIDUAL-PLACE-OF-BIRTH>
+            <INDIVIDUAL-PLACE-OF-BIRTH>
+                <CITY>Toronto</CITY>
+                <STATE-PROVINCE>Ontario</STATE-PROVINCE>
+                <COUNTRY>CA</COUNTRY>
+            </INDIVIDUAL-PLACE-OF-BIRTH>
+            </INDIVIDUAL-PLACE-OF-BIRTH>
+            <INDIVIDUAL-DATE-OF-BIRTH type="array">
+            <INDIVIDUAL-DATE-OF-BIRTH>
+                <YEAR>1990</YEAR>
+            </INDIVIDUAL-DATE-OF-BIRTH>
+            <INDIVIDUAL-DATE-OF-BIRTH>
+                <YEAR>1995</YEAR>
+            </INDIVIDUAL-DATE-OF-BIRTH>
+            </INDIVIDUAL-DATE-OF-BIRTH>
+        </INDIVIDUAL>
+        </INDIVIDUAL>
+    </INDIVIDUALS>
+</CONSOLIDATED-LIST>
