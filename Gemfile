@@ -21,6 +21,9 @@ gem "unicorn", require: false
 gem "settingslogic"
 gem "airbrake", "~> 9"
 
+gem "sidekiq"
+gem "sidekiq-scheduler"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 3.5"
