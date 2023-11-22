@@ -2,7 +2,6 @@
 /.project
 /vendor/*
 
-/config/database.yml
 /config/application.yml
 /config/sidekiq.yml
 /config/ldap.yml
