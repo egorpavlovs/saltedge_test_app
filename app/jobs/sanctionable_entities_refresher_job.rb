@@ -2,9 +2,7 @@ class SanctionableEntitiesRefresherJob
   include Sidekiq::Job
 
   def perform
-    puts 'aaa'
-    res = SanctionableEntitiesRefresher.new.call
-    puts res
+    SanctionableEntitiesRefresher.new.call
   rescue StandardError => e
     # TODO: Add Rollbar
   end

@@ -9,7 +9,7 @@ class Api::V1::SanctionsController < Api::V1::BaseController
     render json: {
       results_of_verification: Verifier.new(data).run,
       client_id: data["meta"]["client_id"].to_s
-    }      
+    }
   end
 
   private
@@ -17,7 +17,7 @@ class Api::V1::SanctionsController < Api::V1::BaseController
   def check_required_fields
     missing_fields = REQUIRED_FIELDS.select { |field| data[field].blank? }
     raise Error::Internal::MissingRequiredFields.new(missing_fields) unless missing_fields.empty?
-    raise Error::Internal::ListOfPersonsLimitExceeded.new if data[:list_of_persons].size > 3
+    raise Error::Internal::ListOfPersonsLimitExceeded.new if data[:list_of_persons].size > 100
   end
 
   def data

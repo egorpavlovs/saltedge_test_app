@@ -35,7 +35,7 @@ describe Api::V1::SanctionsController do
     end
 
     it "should return ListOfPersonsLimitExceeded error" do
-      check_persons_params["data"]["list_of_persons"] += [{}, {}, {}]
+      check_persons_params["data"]["list_of_persons"] += [{}] * 101
       post :check_persons, params: check_persons_params
 
       result = parsed_response
