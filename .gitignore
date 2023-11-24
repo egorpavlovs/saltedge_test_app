@@ -2,7 +2,6 @@
 /.project
 /vendor/*
 
-/config/application.yml
 /config/sidekiq.yml
 /config/ldap.yml
 /config/unicorn.rb
