@@ -4,7 +4,6 @@
 
 /config/sidekiq.yml
 /config/ldap.yml
-/config/unicorn.rb
 
 /coverage/*
 /spec/fixtures/api
