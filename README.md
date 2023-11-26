@@ -29,7 +29,7 @@ See the schema.rb file for more details.
 
 **Route:** `api/v1/sanctions/check_persons`
 
-**POST** => `localhost:9009/api/v1/sanctions/check_persons`
+**GET** => `localhost:9009/api/v1/sanctions/check_persons`
 
 **Required header**: `APP_SECRET:` external_app_to_test_app_secret
 
