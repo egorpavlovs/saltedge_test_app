@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :sanctions, only: [] do
-        collection { post :check_persons }
+        collection { get :check_persons }
       end
     end
   end

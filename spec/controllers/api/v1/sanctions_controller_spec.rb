@@ -4,11 +4,11 @@ describe Api::V1::SanctionsController do
     request.content_type = "application/json"
   end
 
-  describe "POST #check_persons" do
+  describe "GET #check_persons" do
     let!(:check_persons_params) { JSON.parse(load_fixture("controllers/api/v1/sanctions/check_persons_request.json")) }
 
     it "should do sanctions check and return result (match false)" do
-      post :check_persons, params: check_persons_params
+      get :check_persons, params: check_persons_params
       parsed_response.should == JSON.parse(load_fixture("controllers/api/v1/sanctions/results/result_without_match.json"))
     end
 
@@ -20,13 +20,13 @@ describe Api::V1::SanctionsController do
         name_aliases: [{ full_name: "alice doe"}]
       }
 
-      post :check_persons, params: check_persons_params
+      get :check_persons, params: check_persons_params
       parsed_response.should == JSON.parse(load_fixture("controllers/api/v1/sanctions/results/result_with_match.json"))
     end
 
     it "should return MissingRequiredFields error" do
       check_persons_params["data"].delete("list_of_persons")
-      post :check_persons, params: check_persons_params
+      get :check_persons, params: check_persons_params
 
       result = parsed_response
       result["error_class"].should == "MissingRequiredFields"
@@ -35,18 +35,18 @@ describe Api::V1::SanctionsController do
     end
 
     it "should return ListOfPersonsLimitExceeded error" do
-      check_persons_params["data"]["list_of_persons"] += [{}] * 101
-      post :check_persons, params: check_persons_params
+      check_persons_params["data"]["list_of_persons"] += check_persons_params["data"]["list_of_persons"] * 101
+      get :check_persons, params: check_persons_params
 
       result = parsed_response
       result["error_class"].should == "ListOfPersonsLimitExceeded"
-      result["message"].should     == "API: Too much persons. Max: 3"
+      result["message"].should     == "API: Too much persons. Max: 100"
       result["status"].should      == "not_acceptable"
     end
 
     it "should return error when app secret is not valid" do
       subject.request.headers.merge("HTTP_APP_SECRET" => "wrong_secret")
-      post :check_persons, params: check_persons_params
+      get :check_persons, params: check_persons_params
 
       result = parsed_response
       result["error_class"].should == "ExternalAppSecretInvalid"
@@ -56,7 +56,7 @@ describe Api::V1::SanctionsController do
 
     it "should return error when app secret is nil" do
       subject.request.headers.merge("HTTP_APP_SECRET" => nil)
-      post :check_persons, params: check_persons_params
+      get :check_persons, params: check_persons_params
 
       result = parsed_response
       result["error_class"].should == "AppSecretNotReceived"
